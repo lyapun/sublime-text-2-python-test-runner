@@ -23,6 +23,7 @@ and clone the repository using the command below:
 
 ``` shell
 git clone https://github.com/lyapun/sublime-text-2-python-test-runner.git PythonTestRunner
+```
 
 Settings
 --------
