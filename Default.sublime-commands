@@ -1,0 +1,5 @@
+[
+  { "caption": "PythonTestRunner: Run test", "command": "run_python_separate_test" },
+  { "caption": "PythonTestRunner: Run all tests in file", "command": "run_python_test" },
+  { "caption": "PythonTestRunner: Run last test", "command": "run_last_python_test" }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id":"tools",
+    "children":[
+      {
+        "caption":"PythonTestRunner",
+        "children":[
+          {
+            "caption":"Run test",
+            "command":"run_python_separate_test"
+          },
+          {
+            "caption":"Run all tests in file",
+            "command":"run_python_test"
+          },
+          {
+            "caption":"Run last test",
+            "command":"run_last_python_test"
+          }
+        ]
+      }
+    ]
+  }
+]
