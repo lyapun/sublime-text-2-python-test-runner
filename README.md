@@ -14,6 +14,9 @@ Author:
 Installation
 ------------
 
+You can install plugin through Sublime Package Control, or manually:
+
+
 Go to your Sublime Text 2 `Packages` directory
 
  - OS X: `~/Library/Application\ Support/Sublime\ Text\ 2/Packages`
