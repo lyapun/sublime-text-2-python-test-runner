@@ -95,4 +95,7 @@ class TestMethodMatcher(object):
     def find_test_class(self, test_file_content):
         match_classes = re.findall(r'\s?class\s+(\w+)\s?\(', test_file_content)
         if match_classes:
-            return match_classes[-1]
+            try:
+                return [c for c in match_classes if "Test" in c or "test" in c][0]
+            except IndexError:
+                return match_classes[-1]
