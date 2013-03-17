@@ -11,13 +11,13 @@
                 "osx": [
                     {
                         "version": "0.0.2",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.1"
+                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.2"
                     }
                 ],
                 "linux": [
                     {
                         "version": "0.0.2",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.1"
+                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.2"
                     }
                 ]
             }
