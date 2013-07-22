@@ -55,6 +55,8 @@ Usage
 
 Also you can run tests from context menu, sublime menu (Tools), or command pallete.
 
+For a single test run, test methods must follow the convention where the name starts with 'test.' Running all tests in the current file doesn't have this limitation.
+
 Project settings example:
 -------------------------
 
