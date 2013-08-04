@@ -62,8 +62,9 @@ class RunPythonSeparateTestCommand(RunPythonTestCommand):
         test_path = super(RunPythonSeparateTestCommand, self).get_test_path()
         region = self.view.sel()[0]
         line_region = self.view.line(region)
+        file_character_start = 0
         text_string = self.view.substr(
-            sublime.Region(region.begin() - 8000, line_region.end())
+            sublime.Region(file_character_start, line_region.end())
         )
         test_name = TestMethodMatcher().find_test_path(
             text_string, delimeter=self.test_delimeter
