@@ -6,18 +6,18 @@
             "description": "Plugin for running python tests",
             "author": "Taras Lyapun",
             "homepage": "https://github.com/lyapun/sublime-text-2-python-test-runner",
-            "last_modified": "2013-03-17 19:32:00",
+            "last_modified": "2013-08-04 11:24:00",
             "platforms": {
                 "osx": [
                     {
-                        "version": "0.0.2",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.2"
+                        "version": "0.0.3",
+                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.3"
                     }
                 ],
                 "linux": [
                     {
-                        "version": "0.0.2",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.2"
+                        "version": "0.0.3",
+                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v0.0.3"
                     }
                 ]
             }
