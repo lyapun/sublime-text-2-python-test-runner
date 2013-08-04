@@ -12,6 +12,7 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
         self.load_settings()
+        self.clean_settings()
         command = self.prepare_command()
         self.view.window().run_command(
             "exec",
@@ -35,6 +36,11 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
         self.before_test = settings.get('before_test')
         self.after_test = settings.get('after_test')
         self.test_delimeter = settings.get('test_delimeter', TEST_DELIMETER)
+        
+    def clean_settings(self):
+        if 'nosetests' in self.test_command:
+            if not self.test_command.endswith(' '): 
+                self.test_command += ' ' 
 
     def get_test_path(self):
         abs_file = self.view.file_name()
