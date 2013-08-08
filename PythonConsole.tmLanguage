@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>bundleUUID</key>
+  <string>9059af74-8000-4ccc-82fe-388879d41979</string>
+  <key>name</key>
+  <string>TestConsole</string>
+  <key>patterns</key>
+  <array>
+
+    <dict>
+      <key>comment</key>
+      <string>test error</string>
+      <key>begin</key>
+      <string>\=+</string>
+      <key>match</key>
+      <string>ERROR: (.*)</string>
+      <key>name</key>
+      <string>test.error</string>
+      <key>end</key>
+      <string>\-+</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>test fail</string>
+      <key>begin</key>
+      <string>\=+</string>
+      <key>match</key>
+      <string>FAIL: (.*)</string>
+      <key>end</key>
+      <string>\-+</string>
+      <key>name</key>
+      <string>test.fail</string>
+    </dict>
+
+    <dict>
+      <key>comment</key>
+      <string>all test pass</string>
+      <key>match</key>
+      <string>OK</string>
+      <key>name</key>
+      <string>test.pass</string>
+      <key>end</key>
+      <string>\[Finished in [\d+\.]+s\]</string>
+    </dict>
+    <dict>
+      <key>comment</key>
+      <string>tests broken</string>
+      <key>match</key>
+      <string>FAILED (.*)</string>
+      <key>name</key>
+      <string>test.fail</string>
+      <key>end</key>
+      <string>\[Finished in (.*)]</string>
+    </dict>
+    
+  </array>
+  <key>scopeName</key>
+  <string>tests.python</string>
+  <key>uuid</key>
+  <string>9059af74-8000-4ccc-82fe-388879d41979</string>
+</dict>
+</plist>
