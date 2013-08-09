@@ -3,10 +3,29 @@ import re
 import sublime
 import sublime_plugin
 
-
 DEFAULT_TEST_COMMAND = "nosetests "
 TEST_DELIMETER = ":"
 
+
+class Settings(object):
+    def __init__(self):
+        self.settings = sublime.load_settings('PythonTestRunner.sublime-settings')
+
+    def __getattr__(self, name):
+        if not self.settings.has(name):
+            raise AttributeError(name)
+        return self.settings.get(name)
+
+class OutputPanel(object):
+    def __init__(self, window, settings):
+        self.window = window
+        self.settings = settings
+
+    def show_color(self, active=True):
+        if active:
+            self.panel = self.window.get_output_panel('exec')
+            self.panel.settings().set('color_scheme', self.settings.theme)
+            self.panel.set_syntax_file(self.settings.syntax)
 
 class RunPythonTestCommand(sublime_plugin.TextCommand):
 
@@ -14,6 +33,7 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
         self.load_settings()
         self.clean_settings()
         command = self.prepare_command()
+        self.output.show_color(self.show_color)
         self.view.window().run_command(
             "exec",
             {
@@ -25,6 +45,7 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
         self.save_test_run(command)
 
     def load_settings(self):
+        self.output = OutputPanel(self.view.window(), Settings())
         settings = (
             self.view.window().active_view()
             .settings().get("python_test_runner")
@@ -36,6 +57,7 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
         self.before_test = settings.get('before_test')
         self.after_test = settings.get('after_test')
         self.test_delimeter = settings.get('test_delimeter', TEST_DELIMETER)
+        self.show_color = settings.get('show_color', True)
         
     def clean_settings(self):
         if 'nosetests' in self.test_command:
