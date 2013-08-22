@@ -73,7 +73,7 @@ Project settings example:
     	{   
         	"python_test_runner": 
         	{
-            	"before_test": "source .env/bin/activate",
+            	"before_test": ". .env/bin/activate",
             	"after_test": "deactivate",
             	"test_root": "/Path/To/Project",
             	"test_delimeter": ":",
