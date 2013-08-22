@@ -125,6 +125,6 @@ class TestMethodMatcher(object):
         match_classes = re.findall(r'\s?class\s+(\w+)\s?\(', test_file_content)
         if match_classes:
             try:
-                return [c for c in match_classes if "Test" in c or "test" in c][0]
+                return [c for c in match_classes if "Test" in c or "test" in c][-1]
             except IndexError:
                 return match_classes[-1]
