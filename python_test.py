@@ -50,6 +50,10 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
             self.view.window().active_view()
             .settings().get("python_test_runner")
         )
+        if settings is None:
+            sublime.error_message("Python Test Runner:\nYou must add section 'python_test_runner' into 'settings' section.")
+            raise Exception("Cannot run without settings.")
+
         self.test_root = settings.get(
             'test_root', self.view.window().folders()[0]
         )
