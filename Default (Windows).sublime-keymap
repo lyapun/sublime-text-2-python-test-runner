@@ -1,0 +1,5 @@
+[
+  { "keys": ["ctrl+shift+r"], "command": "run_python_separate_test" },
+  { "keys": ["ctrl+shift+t"], "command": "run_python_test" },
+  { "keys": ["ctrl+shift+e"], "command": "run_last_python_test" }
+]
