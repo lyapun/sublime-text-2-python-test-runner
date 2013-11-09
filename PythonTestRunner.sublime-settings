@@ -1,4 +1,4 @@
 {
-  "theme": "Packages/Python Test Runner/PythonConsole.hidden-tmTheme",
-  "syntax": "Packages/Python Test Runner/PythonConsole.tmLanguage"
+  "theme": "Packages/PythonTestRunner/PythonConsole.hidden-tmTheme",
+  "syntax": "Packages/PythonTestRunner/PythonConsole.tmLanguage"
 }
