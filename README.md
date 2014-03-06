@@ -5,7 +5,7 @@ Overview
 --------
 Running Python unit tests (all tests from file or single test). Also running last test.
 
-Support Linux ans OS X. Windows will be in near future.
+Support Linux, OS X and Windows.
 
 Author:
 -------
@@ -33,8 +33,8 @@ Settings
 
 You can set plugin settings and project level, because, probably, you need different settings for different projects.
 
-You should add section "python_test_runner" into "settings" section.
- And you can specify:
+You must add section "python_test_runner" into "settings" section.
+And you can specify:
 
 "test_command" - by default is "nosetests".
 
@@ -49,11 +49,11 @@ You should add section "python_test_runner" into "settings" section.
 Usage
 -----
 
-- Run single python test: `Command-Shift-R` (or `Ctrl-Shift-R` for Linux)
-- Run all python tests from current file: `Command-Shift-T` (or `Ctrl-Shift-T` for Linux)
-- Run last python test: `Command-Shift-E`
+- Run single python test: `Command-Shift-R` (or `Ctrl-Shift-R` for Linux and Windows)
+- Run all python tests from current file: `Command-Shift-T` (or `Ctrl-Shift-T` for Linux and Windows)
+- Run last python test: `Command-Shift-E` (or `Ctrl-Shift-E` for Linux and Windows)
 
-Also you can run tests from context menu, sublime menu (Tools), or command pallete.
+Also you can run tests from context menu, sublime menu (Tools), or command palette.
 
 For a single test run, test methods must follow the convention where the name starts with 'test.' Running all tests in the current file doesn't have this limitation.
 
@@ -81,7 +81,18 @@ Project settings example:
         	}
     	}
 	}
+
+On Windows, using the default python testrunner, the settings part would look something like
+
+    "settings":
+    {
+        "python_test_runner":
+        {
+            "before_test": "D:\\VirtualEnv\\Scripts\\activate.bat",
+            "after_test": "deactivate",
+            "test_root": "D:\\Path\\To\\Project",
+            "test_command": "python -m unittest ",
+            "test_delimeter": "."
+        }
+    }
 	
-ToDo list:
-----------
-- Add support for Windows

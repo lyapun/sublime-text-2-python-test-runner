@@ -6,6 +6,10 @@ import sublime_plugin
 DEFAULT_TEST_COMMAND = "nosetests "
 TEST_DELIMETER = ":"
 
+COMMAND_CHAIN = " ; "
+if sublime.platform() == "windows":
+    COMMAND_CHAIN = " && "
+
 
 class Settings(object):
     def __init__(self):
@@ -50,6 +54,10 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
             self.view.window().active_view()
             .settings().get("python_test_runner")
         )
+        if settings is None:
+            sublime.error_message("Python Test Runner:\nYou must add section 'python_test_runner' into 'settings' section.")
+            raise Exception("Cannot run without settings.")
+
         self.test_root = settings.get(
             'test_root', self.view.window().folders()[0]
         )
@@ -73,9 +81,9 @@ class RunPythonTestCommand(sublime_plugin.TextCommand):
     def prepare_command(self):
         command = self.test_command + self.get_test_path()
         if self.before_test:
-            command = self.before_test + " ; " + command
+            command = self.before_test + COMMAND_CHAIN + command
         if self.after_test:
-            command = command + " ; " + self.after_test
+            command = command + COMMAND_CHAIN + self.after_test
         return command
 
     def save_test_run(self, command):
