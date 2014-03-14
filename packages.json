@@ -8,19 +8,7 @@
             "homepage": "https://github.com/lyapun/sublime-text-2-python-test-runner",
             "last_modified": "2014-03-06 08:46:00",
             "platforms": {
-                "osx": [
-                    {
-                        "version": "1.0.1",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v1.0.1"
-                    }
-                ],
-                "linux": [
-                    {
-                        "version": "1.0.1",
-                        "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v1.0.1"
-                    }
-                ],
-                "windows": [
+                "*": [
                     {
                         "version": "1.0.1",
                         "url": "https://nodeload.github.com/lyapun/sublime-text-2-python-test-runner/zip/v1.0.1"
