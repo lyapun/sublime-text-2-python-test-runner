@@ -2,7 +2,8 @@
     "schema_version": "1.2",
     "packages": [
         {
-            "name": "Python Test Runner",
+            "name": "PythonTestRunner",
+            "previous_names": ["Python Test Runner"],
             "description": "Plugin for running python tests",
             "author": "Taras Lyapun",
             "homepage": "https://github.com/lyapun/sublime-text-2-python-test-runner",
