@@ -1,3 +1,4 @@
+//test
 [
   { "keys": ["super+shift+r"], "command": "run_python_separate_test" },
   { "keys": ["super+shift+t"], "command": "run_python_test" },
